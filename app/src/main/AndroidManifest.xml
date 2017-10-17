@@ -15,5 +15,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+            android:minWidth="120dp"
+            android:minHeight="60dp"
+            android:updatePeriodMillis="1800000"
+            android:initialLayout="@layout/my_widget"
+            android:resizeMode="horizontal|vertical"
+            android:widgetCategory="home_screen|keyguard"
+            android:previewImage="@drawable/micicon">
+        </appwidget-provider>
+        <receiver android:name="WidgetProvider" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider"
+                android:resource="@layout/my_widget" />
+        </receiver>
+
     </application>
 </manifest>
