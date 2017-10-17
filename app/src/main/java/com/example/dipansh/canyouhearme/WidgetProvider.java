@@ -33,6 +33,5 @@ public class WidgetProvider extends AppWidgetProvider{
             remoteViews.setOnClickPendingIntent(R.id.actionButton, pendingIntent);
             appWidgetManager.updateAppWidget(widgetId, remoteViews);
         }
-
     }
 }
